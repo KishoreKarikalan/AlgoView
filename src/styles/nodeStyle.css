@@ -1,0 +1,67 @@
+/* node.css (or any CSS file you prefer) */
+
+/* Style for the individual node */
+.node {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: inline-block;
+  margin: 1px;
+  cursor: pointer;
+}
+
+/* Style for the node when it's the start or end point */
+.node.start {
+  background-image: url("../assets/symbols/start.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.node.end {
+  background-image: url("../assets/symbols/target.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* Style for the node when it's part of the path */
+.node.path {
+  background-color: #33cc33;
+}
+
+/* Style for the node when it's a wall */
+.node.wall {
+  background-color: #333; /* Dark color for walls */
+  transition: background-color 0.2s ease; /* Add the same transition for wall nodes */
+}
+
+.node.weighted {
+  background-color: #000; /* Black background for weighted nodes */
+  color: #fff; /* White text for weighted nodes */
+  position: relative;
+  border-radius: 50%; /* Make it circular */
+  width: 20px; /* Set the width to match the height for a perfect circle */
+  height: 20px; /* Set the height to match the width for a perfect circle */
+}
+
+.weight-value {
+  position: absolute;
+  font-size: 10px;
+  bottom: 2px;
+  right: 2px;
+  color: #fff; /* White text for the weight-value element */
+  background-color: #000; /* Black background for the weight-value element */
+  border-radius: 50%; /* Make it circular */
+  width: 15px; /* Adjust the width to fit the circle */
+  height: 15px; /* Adjust the height to fit the circle */
+  text-align: center;
+  line-height: 15px; /* Vertically center the text in the circle */
+}
+
+.node.visited {
+  background-color: #ffcc00; /* Highlight color for visited nodes */
+}
+
+.node.shortest-path {
+  background-color: #33cc33; /* Highlight color for the shortest path */
+}
