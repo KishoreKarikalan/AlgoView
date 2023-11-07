@@ -164,22 +164,7 @@ function Home() {
           ))}
         </tbody>
       </table>
-      <footer className="footer mt-auto py-3 bg-light">
-        <div className="container">
-          <div className="row">
-            <div className="col text-center">
-              <p>Connect with me on LinkedIn:</p>
-              <a
-                href="YOUR_LINKEDIN_PROFILE_URL"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fab fa-linkedin fa-2x"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 }
