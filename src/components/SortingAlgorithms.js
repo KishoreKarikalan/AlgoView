@@ -4,7 +4,6 @@ import ArrayElement from "./ArrayElement";
 const SortingVisualizer = () => {
   const [array, setArray] = useState([]);
 
-  // Function to generate a new random array
   const generateArray = () => {
     const newArray = [];
     for (let i = 0; i < 50; i++) {
@@ -13,7 +12,6 @@ const SortingVisualizer = () => {
     setArray(newArray);
   };
 
-  // Bubble Sort algorithm
   const bubbleSort = () => {
     const arr = [...array];
     const n = arr.length;
@@ -58,17 +56,14 @@ const SortingVisualizer = () => {
     for (let i = n - 1; i > 0; i--) {
       let maxIndex = 0;
       for (let j = 1; j <= i; j++) {
-        // Start from 1 and consider all elements in the unsorted part
         if (arr[j] > arr[maxIndex]) {
           maxIndex = j;
         }
       }
 
-      // Swap elements
       let temp = arr[i];
       arr[i] = arr[maxIndex];
       arr[maxIndex] = temp;
-      // Record the swap
       animations.push([...arr]);
     }
     animateSort(animations, 200);
@@ -96,20 +91,16 @@ const SortingVisualizer = () => {
     for (let j = low; j < high; j++) {
       if (arr[j] < pivot) {
         i++;
-        // Swap elements
         const temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
-        // Record the swap
         animations.push([...arr]);
       }
     }
 
-    // Swap elements
     const temp = arr[i + 1];
     arr[i + 1] = arr[high];
     arr[high] = temp;
-    // Record the swap
     animations.push([...arr]);
 
     return i + 1;
@@ -120,23 +111,25 @@ const SortingVisualizer = () => {
       const animation = animations[i];
       setTimeout(() => {
         setArray(animation);
-      }, i * delay); // Adjust animation speed
+      }, i * delay);
     }
   };
 
-  // Helper function to generate a random integer in a given range
   const randomIntFromInterval = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
   return (
-    <div className="sorting-visualizer">
-      <button onClick={generateArray}>Generate New Array</button>
-      <button onClick={bubbleSort}>Bubble Sort</button>
-      <button onClick={insertionSort}>Insertion Sort</button>
-      <button onClick={selectionSort}>Selection Sort</button>
-      <button onClick={quickSort}>Quick Sort</button>
-      <div className="array-container">
+    <div className="sorting-visualizermt-3 mt-3">
+      <div className="d-flex justify-content-around ">
+      <button class ="btn btn-outline-secondary" onClick={generateArray}>Generate New Array</button>
+      <button class ="btn btn-outline-secondary" onClick={bubbleSort}>Bubble Sort</button>
+      <button class ="btn btn-outline-secondary" onClick={insertionSort}>Insertion Sort</button>
+      <button class ="btn btn-outline-secondary" onClick={selectionSort}>Selection Sort</button>
+      <button class ="btn btn-outline-secondary" onClick={quickSort}>Quick Sort</button>
+      </div>
+      
+      <div className="array-container mt-3">
         {array.map((value, index) => (
           <ArrayElement key={index} value={value} />
         ))}

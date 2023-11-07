@@ -13,7 +13,7 @@ function createBoard() {
   const screenHeight = window.innerHeight;
 
   const cellSize = 25;
-  const rows = Math.floor(screenHeight / cellSize);
+  const rows = Math.floor(screenHeight / (cellSize*1.5));
   const cols = Math.floor(screenWidth / cellSize);
 
   const board = [];
@@ -71,11 +71,9 @@ function Board({ onNodeClick, selectedOption }) {
   };
 
   const clearBoard = () => {
-    // Clear the entire board by resetting all node properties to their default values.
     const clearedBoard = createBoard();
     setBoard(clearedBoard);
 
-    // Reset the start and end nodes to null
     setStartNodePosition(null);
     setEndNodePosition(null);
     clearAnimatedNodes();
@@ -86,14 +84,12 @@ function Board({ onNodeClick, selectedOption }) {
       currentRow.map((node, colIndex) => {
         if (rowIndex === row && colIndex === col) {
           if (selectedOption === "start") {
-            // Clear all existing start nodes in the entire board
             setStartNodePosition({ row: row, col: col });
             return {
               ...node,
               isStart: true,
             };
           } else if (selectedOption === "end") {
-            // Clear all existing end nodes in the entire board
             setEndNodePosition({ row: row, col: col });
             return {
               ...node,
@@ -105,20 +101,19 @@ function Board({ onNodeClick, selectedOption }) {
               isWall: !node.isWall,
             };
           } else if (selectedOption === "weights") {
-            const newWeightValue = (node.weightValue + 5) % 20; // Adjust as needed
+            const newWeightValue = (node.weightValue + 5) % 20; 
             return {
               ...node,
               weightValue: newWeightValue,
             };
           }
         } else if (selectedOption === "start" && node.isStart) {
-          // Clear existing start nodes in the entire board when selecting a new one
+          
           return {
             ...node,
             isStart: false,
           };
         } else if (selectedOption === "end" && node.isEnd) {
-          // Clear existing end nodes in the entire board when selecting a new one
           return {
             ...node,
             isEnd: false,
@@ -259,20 +254,17 @@ function Board({ onNodeClick, selectedOption }) {
               animatedNode.classList.add("visited");
             }
 
-            // Check if this is the last node in the visitedNodesInOrder
             if (i === visitedNodesInOrder.length - 1) {
-              // After the last visited node, start animating the shortest path
               animateShortestPath();
             }
           }
-        }, (i * 50) / algorithmSpeed); // Adjust the delay as needed to control the animation speed
+        }, (i * 50) / algorithmSpeed);
       }
     }
 
     function animateShortestPath() {
       if (shortestPath && shortestPath.length) {
         for (let i = 0; i < shortestPath.length; i++) {
-          // Animate the shortest path
           setTimeout(() => {
             const node = shortestPath[i];
             if (node) {
@@ -283,7 +275,7 @@ function Board({ onNodeClick, selectedOption }) {
                 animatedNode.classList.add("shortest-path");
               }
             }
-          }, (i * 50) / algorithmSpeed); // Adjust the delay as needed to control the animation speed
+          }, (i * 50) / algorithmSpeed);
         }
       }
     }
@@ -300,8 +292,9 @@ function Board({ onNodeClick, selectedOption }) {
 
   return (
     <div>
-      <button onClick={clearBoard}>Clear Board</button>
-      <button onClick={findShortestPath}>Visulaize Algorithm</button>
+      <div className="d-flex justify-content-around my-3">
+      <button class="btn btn-outline-secondary" onClick={clearBoard}>Clear Board</button>
+      <button class="btn btn-outline-secondary mx-3" onClick={findShortestPath}>Visulaize Algorithm</button>
       <SpeedSlider speed={algorithmSpeed} onSpeedChange={handleSpeedChange} />
       <select
         value={selectedAlgorithm}
@@ -316,6 +309,7 @@ function Board({ onNodeClick, selectedOption }) {
         <option value="dfs">Depth-First Search (DFS)</option>
         <option value="greedyBestFirst">Greedy-BestFirst Algorithm</option>
       </select>
+      </div>
 
       <table className="board">
         <tbody onMouseUp={() => setMouseDown(false)}>

@@ -6,11 +6,11 @@ function GraphToolBar(props) {
   };
 
   return (
-    <div className="navbar">
-      <button onClick={() => handleOptionClick("start")}>Set Start Node</button>
-      <button onClick={() => handleOptionClick("end")}>Set End Node</button>
-      <button onClick={() => handleOptionClick("weights")}>Set Weights</button>
-      <button onClick={() => handleOptionClick("walls")}>Set Walls</button>
+    <div className="d-flex justify-content-around my-3">
+      <button class="btn btn-outline-secondary" onClick={() => handleOptionClick("start")}>Set Start Node</button>
+      <button class="btn btn-outline-secondary" onClick={() => handleOptionClick("end")}>Set End Node</button>
+      <button class="btn btn-outline-secondary" onClick={() => handleOptionClick("weights")}>Set Weights</button>
+      <button class="btn btn-outline-secondary" onClick={() => handleOptionClick("walls")}>Set Walls</button>
     </div>
   );
 }

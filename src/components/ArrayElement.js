@@ -1,8 +1,7 @@
 import React from "react";
-import "../styles/arrayELementStyle.css"; // Import your CSS file
+import "../styles/arrayELementStyle.css"; 
 
 const ArrayElement = ({ value }) => {
-  // You can style the ArrayElement here, for example:
   const elementStyle = {
     height: `${value}px`,
   };
