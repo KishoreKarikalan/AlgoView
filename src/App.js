@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home"; // Import your Home component here
-import GraphAlgorithms from "./components/GraphAlgorithms"; // Import your GraphAlgorithms component here
-import SortingAlgorithms from "./components/SortingAlgorithms"; // Import your SortingAlgorithms component here
+import Home from "./components/Home";
+import GraphAlgorithms from "./components/GraphAlgorithms";
+import SortingAlgorithms from "./components/SortingAlgorithms";
 
 function App() {
   return (
@@ -13,27 +13,13 @@ function App() {
             <Link className="navbar-brand" to="/">
               Algo-View
             </Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/graph-algorithms">
-                    Graph Algorithms
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/sorting-algorithms">
-                    Sorting Algorithms
-                  </Link>
-                </li>
-              </ul>
+            <div className="navbar-nav ml-auto">
+              <Link className="nav-link" to="/graph-algorithms">
+                Graph Algorithms
+              </Link>
+              <Link className="nav-link" to="/sorting-algorithms">
+                Sorting Algorithms
+              </Link>
             </div>
           </div>
         </nav>
