@@ -1,4 +1,4 @@
-import "../styles/nodeStyle.css"; // Import your CSS file
+import "../styles/nodeStyle.css";
 
 function Node({
   nodeId,
@@ -9,13 +9,13 @@ function Node({
   isWall,
   weightValue,
 }) {
-  let classNames = "node"; // Default class
-  if (isStart) classNames += " start"; // Add start class if needed
-  if (isEnd) classNames += " end"; // Add end class if needed
-  if (isMarked) classNames += " marked"; // Add marked class if needed
-  if (isPath) classNames += " path"; // Add path class if needed
-  if (isWall) classNames += " wall"; // Add wall class if needed
-  if (weightValue !== 0) classNames += " weighted"; // Add weighted class if needed
+  let classNames = "node";
+  if (isStart) classNames += " start"; 
+  if (isEnd) classNames += " end";
+  if (isMarked) classNames += " marked"; 
+  if (isPath) classNames += " path"; 
+  if (isWall) classNames += " wall"; 
+  if (weightValue !== 0) classNames += " weighted"; 
 
   return (
     <div className={classNames} id={nodeId}>

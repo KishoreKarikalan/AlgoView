@@ -24,7 +24,7 @@ function bfs(grid, startNode, endNode) {
     const neighbors = getNeighbors(current, grid);
     for (const neighbor of neighbors) {
       if (!neighbor.isVisited) {
-        neighbor.previousNode = current; // Set the previousNode property.
+        neighbor.previousNode = current;
         queue.push(neighbor);
       }
     }

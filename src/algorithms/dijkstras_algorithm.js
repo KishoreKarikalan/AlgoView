@@ -36,7 +36,7 @@ function updateUnvisitedNeighbors(node, grid) {
 
   for (const neighbor of neighbors) {
     if (neighbor.isWall) continue;
-    const weight = neighbor.weightValue + 1; // Get the weightValue from the node
+    const weight = neighbor.weightValue + 1;
     const tentativeDistance = node.distance + weight;
     if (tentativeDistance < neighbor.distance) {
       neighbor.distance = tentativeDistance;

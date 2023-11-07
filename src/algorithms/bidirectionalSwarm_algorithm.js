@@ -4,7 +4,6 @@ function bidirectionalSwarm(grid, startNode, endNode) {
     return null;
   }
 
-  // Initialize forwardGScore and backwardGScore properties for each node
   grid.forEach((row) => {
     row.forEach((node) => {
       node.forwardGScore = Infinity;
@@ -12,7 +11,6 @@ function bidirectionalSwarm(grid, startNode, endNode) {
     });
   });
 
-  // Initialize sets to track visited nodes
   let forwardVisitedSet = new Set();
   let backwardVisitedSet = new Set();
 
@@ -31,13 +29,10 @@ function bidirectionalSwarm(grid, startNode, endNode) {
     visitedNodesInOrder.push(forwardCurrent);
     visitedNodesInOrder.push(backwardCurrent);
 
-    // Check if forward meets backward
     if (forwardVisitedSet.has(backwardCurrent)) {
-      // The meeting condition is satisfied
       return visitedNodesInOrder;
     }
 
-    // Mark the nodes as visited
     forwardVisitedSet.add(forwardCurrent);
     backwardVisitedSet.add(backwardCurrent);
 
@@ -87,10 +82,8 @@ function bidirectionalSwarm(grid, startNode, endNode) {
       }
     }
 
-    // After visiting a node in forward search:
     forwardOpenSet = forwardOpenSet.filter((node) => node !== forwardCurrent);
 
-    // After visiting a node in backward search:
     backwardOpenSet = backwardOpenSet.filter(
       (node) => node !== backwardCurrent
     );
@@ -100,7 +93,6 @@ function bidirectionalSwarm(grid, startNode, endNode) {
   return null;
 }
 
-// Define a function to get the node with the lowest forward G score.
 function getLowestForwardFScoreNode(nodes) {
   let lowestNode = nodes[0];
   for (const node of nodes) {
@@ -111,7 +103,6 @@ function getLowestForwardFScoreNode(nodes) {
   return lowestNode;
 }
 
-// Define a function to get the node with the lowest backward G score.
 function getLowestBackwardFScoreNode(nodes) {
   let lowestNode = nodes[0];
   for (const node of nodes) {
@@ -122,7 +113,7 @@ function getLowestBackwardFScoreNode(nodes) {
   return lowestNode;
 }
 
-// Define a function to get neighboring nodes.
+
 function getNeighbors(node, grid, forwardVisitedSet, backwardVisitedSet) {
   const neighbors = [];
   const { row, col } = node;

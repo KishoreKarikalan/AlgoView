@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Board from "./board"; // Import your Board component here
-import GraphToolBar from "./GraphToolBar"; // Import your GraphToolBar component here
+import Board from "./board";
+import GraphToolBar from "./GraphToolBar";
 
 function GraphAlgorithms() {
   const [selectedOption, setSelectedOption] = useState(null);

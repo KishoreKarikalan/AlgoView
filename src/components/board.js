@@ -287,7 +287,7 @@ function Board({ onNodeClick, selectedOption }) {
 
   const handleAlgorithmChange = (selectedAlgorithm) => {
     setSelectedAlgorithm(selectedAlgorithm);
-    clearAnimatedNodes();
+    clearBoard();
   };
 
   return (

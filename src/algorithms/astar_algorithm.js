@@ -25,7 +25,7 @@ function astar(grid, startNode, endNode) {
         continue;
       }
 
-      const weight = neighbor.weightValue + 1; // Get the weightValue from the node
+      const weight = neighbor.weightValue + 1; 
       const tentativeGScore = current.gScore + weight;
 
       if (!openSet.includes(neighbor)) {
