@@ -4,9 +4,13 @@ import ArrayElement from "./ArrayElement";
 const SortingVisualizer = () => {
   const [array, setArray] = useState([]);
 
+  const screenWidth = window.innerWidth;
+  const cellSize = 50;
+  const elementsCnt = Math.floor(screenWidth / cellSize)*2;
+
   const generateArray = () => {
     const newArray = [];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < elementsCnt; i++) {
       newArray.push(randomIntFromInterval(5, 500));
     }
     setArray(newArray);
