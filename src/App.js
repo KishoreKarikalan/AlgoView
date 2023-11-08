@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home"; // Import your Home component here
-import GraphAlgorithms from "./components/GraphAlgorithms"; // Import your GraphAlgorithms component here
-import SortingAlgorithms from "./components/SortingAlgorithms"; // Import your SortingAlgorithms component here
+import Home from "./components/Home";
+import GraphAlgorithms from "./components/GraphAlgorithms";
+import SortingAlgorithms from "./components/SortingAlgorithms";
 
 function App() {
   return (
@@ -13,22 +13,20 @@ function App() {
             <Link className="navbar-brand" to="/">
               Algo-View
             </Link>
-            
-           
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/graph-algorithms">
-                    Graph Algorithms
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/sorting-algorithms">
-                    Sorting Algorithms
-                  </Link>
-                </li>
-              </ul>
-            </div>
-        
+
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <Link className="nav-link" to="/graph-algorithms">
+                  Graph Algorithms
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/sorting-algorithms">
+                  Sorting Algorithms
+                </Link>
+              </li>
+            </ul>
+          </div>
         </nav>
 
         <Routes>

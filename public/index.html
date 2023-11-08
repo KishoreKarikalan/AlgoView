@@ -25,19 +25,61 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>AlgoView</title>
+    <style>
+      .phoneImage {
+        height: 80px;
+      }
+      #tiltMessage {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 28px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #tiltMessage p {
+        font-size: 20px;
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div id="tiltMessage">
+      <img src="phone.png" alt="phoneImage" class="phoneImage" />
+      <div>Tilt your phone</div>
+      <p>(Switch to portrait mode for the best experience)</p>
+    </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <script>
+      const tiltMessage = document.getElementById("tiltMessage");
+      const rootContent = document.getElementById("root");
+      const portraitMediaQuery = window.matchMedia("(orientation: portrait)");
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      function handleOrientationChange(event) {
+        if (event.matches) {
+          tiltMessage.style.display = "flex";
+          rootContent.style.display = "none";
+        } else {
+          tiltMessage.style.display = "none";
+          rootContent.style.display = "flex";
+        }
+      }
+
+      portraitMediaQuery.addEventListener("change", handleOrientationChange);
+
+      handleOrientationChange(portraitMediaQuery);
+    </script>
   </body>
 </html>

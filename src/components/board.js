@@ -292,11 +292,11 @@ function Board({ onNodeClick, selectedOption }) {
   return (
     <div>
       <div className="d-flex justify-content-around my-3">
-        <button class="btn btn-outline-secondary" onClick={clearBoard}>
+        <button className="btn btn-outline-secondary" onClick={clearBoard}>
           Clear Board
         </button>
         <button
-          class="btn btn-outline-secondary mx-3"
+          className="btn btn-outline-secondary mx-3"
           onClick={findShortestPath}
         >
           Visulaize Algorithm
