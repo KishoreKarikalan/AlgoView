@@ -157,9 +157,14 @@ function Board({ onNodeClick, selectedOption }) {
         board[startNodePosition.row][startNodePosition.col],
         board[endNodePosition.row][endNodePosition.col]
       );
+      if (visitedNodesInOrder.length === 0) {
+        alert("No Path Exists");
+        return;
+      }
       const shortestPath = getShortestPath(
         board[endNodePosition.row][endNodePosition.col]
       );
+
       animatePath(visitedNodesInOrder, shortestPath);
     } else if (selectedAlgorithm === "astar") {
       const visitedNodesInOrder = astar(
@@ -167,6 +172,10 @@ function Board({ onNodeClick, selectedOption }) {
         board[startNodePosition.row][startNodePosition.col],
         board[endNodePosition.row][endNodePosition.col]
       );
+      if (visitedNodesInOrder.length === 0) {
+        alert("No Path Exists");
+        return;
+      }
       const shortestPath = getShortestPath(
         board[endNodePosition.row][endNodePosition.col]
       );
@@ -182,6 +191,10 @@ function Board({ onNodeClick, selectedOption }) {
         board[startNodePosition.row][startNodePosition.col],
         board[endNodePosition.row][endNodePosition.col]
       );
+      if (visitedNodesInOrder.length === 0) {
+        alert("No Path Exists");
+        return;
+      }
       const shortestPath = getShortestPath(
         board[endNodePosition.row][endNodePosition.col]
       );
@@ -196,6 +209,10 @@ function Board({ onNodeClick, selectedOption }) {
           board[startNodePosition.row][startNodePosition.col],
           board[endNodePosition.row][endNodePosition.col]
         );
+        if (visitedNodesInOrder.length === 0) {
+          alert("No Path Exists");
+          return;
+        }
         const shortestPath = getShortestPath(
           board[endNodePosition.row][endNodePosition.col]
         );
@@ -207,6 +224,10 @@ function Board({ onNodeClick, selectedOption }) {
         board[startNodePosition.row][startNodePosition.col],
         board[endNodePosition.row][endNodePosition.col]
       );
+      if (visitedNodesInOrder.length === 0) {
+        alert("No Path Exists");
+        return;
+      }
       const shortestPath = getShortestPath(
         board[endNodePosition.row][endNodePosition.col]
       );
@@ -220,6 +241,10 @@ function Board({ onNodeClick, selectedOption }) {
           board[startNodePosition.row][startNodePosition.col],
           board[endNodePosition.row][endNodePosition.col]
         );
+        if (visitedNodesInOrder.length === 0) {
+          alert("No Path Exists");
+          return;
+        }
         const shortestPath = getShortestPath(
           board[endNodePosition.row][endNodePosition.col]
         );
