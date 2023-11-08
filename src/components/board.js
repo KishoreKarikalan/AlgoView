@@ -13,7 +13,7 @@ function createBoard() {
   const screenHeight = window.innerHeight;
 
   const cellSize = 25;
-  const rows = Math.floor(screenHeight / (cellSize*1.5));
+  const rows = Math.floor(screenHeight / (cellSize * 1.5));
   const cols = Math.floor(screenWidth / cellSize);
 
   const board = [];
@@ -101,14 +101,13 @@ function Board({ onNodeClick, selectedOption }) {
               isWall: !node.isWall,
             };
           } else if (selectedOption === "weights") {
-            const newWeightValue = (node.weightValue + 5) % 20; 
+            const newWeightValue = (node.weightValue + 5) % 20;
             return {
               ...node,
               weightValue: newWeightValue,
             };
           }
         } else if (selectedOption === "start" && node.isStart) {
-          
           return {
             ...node,
             isStart: false,
@@ -293,22 +292,29 @@ function Board({ onNodeClick, selectedOption }) {
   return (
     <div>
       <div className="d-flex justify-content-around my-3">
-      <button class="btn btn-outline-secondary" onClick={clearBoard}>Clear Board</button>
-      <button class="btn btn-outline-secondary mx-3" onClick={findShortestPath}>Visulaize Algorithm</button>
-      <SpeedSlider speed={algorithmSpeed} onSpeedChange={handleSpeedChange} />
-      <select
-        value={selectedAlgorithm}
-        onChange={(e) => handleAlgorithmChange(e.target.value)}
-      >
-        <option value="dijkstra">Dijkstra's Algorithm</option>
-        <option value="astar">A* Algorithm</option>
-        <option value="bidirectionalSwarm">
-          Bidirectional Swarm Algorithm
-        </option>
-        <option value="bfs">Breadth-First Search (BFS)</option>
-        <option value="dfs">Depth-First Search (DFS)</option>
-        <option value="greedyBestFirst">Greedy-BestFirst Algorithm</option>
-      </select>
+        <button class="btn btn-outline-secondary" onClick={clearBoard}>
+          Clear Board
+        </button>
+        <button
+          class="btn btn-outline-secondary mx-3"
+          onClick={findShortestPath}
+        >
+          Visulaize Algorithm
+        </button>
+        <SpeedSlider speed={algorithmSpeed} onSpeedChange={handleSpeedChange} />
+        <select
+          value={selectedAlgorithm}
+          onChange={(e) => handleAlgorithmChange(e.target.value)}
+        >
+          <option value="dijkstra">Dijkstra's Algorithm</option>
+          <option value="astar">A* Algorithm</option>
+          <option value="bidirectionalSwarm">
+            Bidirectional Swarm Algorithm
+          </option>
+          <option value="bfs">Breadth-First Search (BFS)</option>
+          <option value="dfs">Depth-First Search (DFS)</option>
+          <option value="greedyBestFirst">Greedy-BestFirst Algorithm</option>
+        </select>
       </div>
 
       <table className="board">
