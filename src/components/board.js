@@ -157,7 +157,7 @@ function Board({ onNodeClick, selectedOption }) {
         board[startNodePosition.row][startNodePosition.col],
         board[endNodePosition.row][endNodePosition.col]
       );
-      if (visitedNodesInOrder.length === 0) {
+      if (!visitedNodesInOrder) {
         alert("No Path Exists");
         return;
       }
@@ -172,7 +172,7 @@ function Board({ onNodeClick, selectedOption }) {
         board[startNodePosition.row][startNodePosition.col],
         board[endNodePosition.row][endNodePosition.col]
       );
-      if (visitedNodesInOrder.length === 0) {
+      if (!visitedNodesInOrder) {
         alert("No Path Exists");
         return;
       }
@@ -191,7 +191,7 @@ function Board({ onNodeClick, selectedOption }) {
         board[startNodePosition.row][startNodePosition.col],
         board[endNodePosition.row][endNodePosition.col]
       );
-      if (visitedNodesInOrder.length === 0) {
+      if (!visitedNodesInOrder) {
         alert("No Path Exists");
         return;
       }
@@ -209,7 +209,7 @@ function Board({ onNodeClick, selectedOption }) {
           board[startNodePosition.row][startNodePosition.col],
           board[endNodePosition.row][endNodePosition.col]
         );
-        if (visitedNodesInOrder.length === 0) {
+        if (!visitedNodesInOrder) {
           alert("No Path Exists");
           return;
         }
@@ -224,7 +224,7 @@ function Board({ onNodeClick, selectedOption }) {
         board[startNodePosition.row][startNodePosition.col],
         board[endNodePosition.row][endNodePosition.col]
       );
-      if (visitedNodesInOrder.length === 0) {
+      if (!visitedNodesInOrder) {
         alert("No Path Exists");
         return;
       }
@@ -241,7 +241,7 @@ function Board({ onNodeClick, selectedOption }) {
           board[startNodePosition.row][startNodePosition.col],
           board[endNodePosition.row][endNodePosition.col]
         );
-        if (visitedNodesInOrder.length === 0) {
+        if (!visitedNodesInOrder) {
           alert("No Path Exists");
           return;
         }
